@@ -71,7 +71,7 @@ coverage.xml
 *.weights
 *.model
 *.pb
-models/
+ai-service/models/
 datasets/
 data/
 logs/
