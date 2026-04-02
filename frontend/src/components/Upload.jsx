@@ -46,7 +46,9 @@ const Upload = () => {
       });
       navigate(`/result/${response.data.data._id}`);
     } catch (err) {
-      setError(err.response?.data?.error || 'Something went wrong during upload.');
+      const errorData = err.response?.data?.error;
+      const errorMessage = typeof errorData === 'object' ? errorData.message : errorData;
+      setError(errorMessage || 'Something went wrong during upload.');
     } finally {
       setLoading(false);
     }
